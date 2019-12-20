@@ -1,0 +1,252 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 18px;
+    font-family: 'M PLUS Rounded', sans-serif;
+}
+h1{
+    font-family: 'Playfair Display', sans-serif;
+}
+.bold{
+    font-weight: 700;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+}
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-col-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.orange{
+    color: #D15700;
+}
+.main-content{
+    margin-top: 4rem;
+}
+.main-content h3{
+    margin-bottom: 2rem;
+}
+
+/***** header *****/
+header{
+    padding: 0.5rem 0 1rem 0;
+}
+.logo{
+    font-size: 2.5rem;
+    margin-right: 5rem;
+}
+.nav-links{
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid transparent;
+    padding: 3px 0 3px 0;
+    transition: all 0.7s;
+}
+.nav-links:hover{
+    color: #D15700;
+    border-color: #D15700;
+    transition: all 0.3s;
+}
+.header-2{
+    box-shadow: 3px 3px 7px rgb(165, 165, 165);
+}
+#profile{
+    margin-left: 2rem;
+}
+
+/***** hero *****/
+#hero{
+    background-color: #D15700;
+    height: 45vh;
+}
+.hero-content{
+    color: #fff;
+    padding-top: 5.5rem;
+}
+.hero-content h1{
+    font-size: 4rem;
+}
+.hero-content p{
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+.start{
+    text-decoration: none;
+    color: #D15700;
+    padding: 12px 45px;
+    border: 1px solid #D15700;
+    background-color: #fff;
+    transition: all 0.9s;
+}
+.start:hover{
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+/***** cards *****/
+#cards{
+    margin-top: 7rem;
+}
+#cards .card{
+    width: 30%;
+}
+#cards .card h3{
+    margin-bottom: 2rem;
+}
+#cards .card p{
+    width: 80%;
+}
+
+/***** columns *****/
+.col{
+    width: 45%;
+}
+
+/***** overflow *****/
+.overflow{
+    height: auto;
+    overflow-y: scroll;
+}
+
+/***** alerts *****/
+.alert ul li{
+    list-style: none;
+    color: firebrick;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+/***** all forms *****/
+.form-content{
+    margin-top: 7rem;
+}
+.form-btn{
+    width: 50%;
+    outline: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #D15700;
+    border: 1px solid #D15700;
+    transition: all 0.9s;
+}
+.form-btn:hover{
+    background-color: transparent;
+    color: #D15700;
+    transition: all 0.3s;
+}
+form>*{
+    margin-bottom: 1rem;
+}
+.form-content h3{
+    margin-bottom: 2rem;
+}
+form{
+    width: 60%;
+}
+form input{
+    height: 2rem;
+    font-size: 0.85rem;
+    border: 1px solid #000;
+}
+.link{
+    display: inline-block;
+    margin-top: 3rem;
+    text-decoration: none;
+    color: #3876C1;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #3876C1;
+}
+.post-content{
+    margin-bottom: 3rem;
+}
+.post h3{
+    margin-bottom: 1rem;
+}
+.post form{
+    width: 100%;
+}
+.post form textarea{
+    height: 7rem;
+    border: 1px solid #000;
+    font-size: 1rem;
+    padding: 5px 0 0 5px;
+}
+.post-btn{
+    width: 35%;
+}
+.comment-btn{
+    width: 20%;
+}
+.small-info{
+    font-size: 0.65rem;
+    margin-right: 10px;
+}
+.post-display{
+    background-color: #D15700;
+    padding: 12px 0 12px 10px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.comment-display{
+    background-color: #3876C1;
+    padding: 12px 0 12px 10px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.comment{
+    width: 100%;
+}
+.comment textarea{
+    border: 1px solid #000;
+    height: 2rem;
+    padding: 5px 0 0 5px;
+    font-size: 0.85rem;
+}
+
+/***** tables *****/
+table th{
+    padding-right: 24rem;
+    padding-bottom: 8px;
+}
+table .id,
+table .level{
+    padding-right: 15px;
+}
+table td{
+    padding-bottom: 5px;
+}
+
+/***** User Info div *****/
+.user-info>*{
+    margin-bottom: 10px;
+}
+.user-info{
+    margin-bottom: 5rem;
+}

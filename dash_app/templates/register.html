@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,700|Playfair+Display:900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-2">
+        <div class="wrapper flex-center">
+            <div class="left flex-center">
+                <h1 class="logo">Rolando's Dash</h1>
+                <a href="/" class="nav-links">Home</a>
+            </div>
+            <div class="right">
+                <a href="/signin/page" class="nav-links">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper form-content flex-between">
+
+        <div class="col">
+            <h3 class="orange">Register</h3>
+            <form action="/register" class="flex-col-between form-only" method="POST">
+                {% csrf_token %}
+                <label for="email">Email:</label>
+                <input type="text" name="email">
+                <label for="name">First Name:</label>
+                <input type="text" name="first_name">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name">
+
+                <label>Password:</label>
+                <input type="password" name="password">
+
+                <label>Please confirm password:</label>
+                <input type="password" name="password_confirm">
+
+                <input type="submit" class="form-btn" value="Register">
+            </form>
+            <a href="/signin/page" class="link">Already have an account? Sign in</a>
+        </div>
+
+        <div class="col">
+            <div class="alert">
+                {% for message in messages %}
+                <ul>
+                    <li>- {{ message }}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

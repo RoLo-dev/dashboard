@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,700|Playfair+Display:900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-2">
+        <div class="wrapper flex-center">
+            <div class="left flex-around">
+                <h1 class="logo">Rolando's Dash</h1>
+                <a href="/dashboard" class="nav-links">Dashboard</a>
+                <a href="/" id="profile" class="nav-links">Profile</a>
+            </div>
+            <div class="right">
+                <a href="/logoff" class="nav-links">Log off</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper main-content flex-between">
+
+        <div class="col">
+            <div class="user-info">
+                <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+                <p><span class="bold">Registered at:</span> {{ user.created_at }}</p>
+                <p><span class="bold">User ID:</span> {{ user.id }}</p>
+                <p><span class="bold">Email Address:</span> {{ user.email }}</p>
+                <p><span class="bold">Description:</span> {{ user.desc }}</p>
+            </div>
+
+            <div class="post">
+                <h3>Leave a message for {{ user.first_name }}</h3>
+                <form action="/post/create/{{ user.id }}" class="flex-col-between" method="POST">
+                    {% csrf_token %}
+                    <textarea name="post"></textarea>
+                    <input type="submit" class="form-btn post-btn" value="Post">
+                </form>
+
+                <div class="alert">
+                    {% for message in messages %}
+                    <ul>
+                        <li>{{ message }}</li>
+                    </ul>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="overflow">
+
+                {% for post in all_posts %}
+                <div class="post-content">
+                    <div class="post-display flex">
+                        <div class="flex-col-between">
+                            <p class="small-info">{{ post.created_by.first_name }}</p>
+                            <p class="small-info">{{ post.created_at }}</p>
+                        </div>
+                        <p>{{ post.post }}</p>
+                    </div>
+
+                    {% for comment in post.comments.all %}
+                    <div class="comment-display flex">
+                        <div class="flex-col-between">
+                            <p class="small-info">{{ comment.created_by.first_name }}</p>
+                            <p class="small-info">{{ comment.created_at }}</p>
+                        </div>
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                    {% endfor %}
+
+                    <form action="/post/comment/{{ post.id }}" class="flex-col-between comment" method="POST">
+                        {% csrf_token %}
+                        <textarea name="comment" placeholder="Leave a comment"></textarea>
+                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                        <input type="submit" class="form-btn comment-btn" value="Comment">
+                    </form>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

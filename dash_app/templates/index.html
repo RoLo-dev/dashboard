@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,700|Playfair+Display:900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="wrapper flex-center">
+            <div class="left flex-center">
+                <h1 class="logo">Rolando's Dash</h1>
+                <a href="/" class="nav-links">Home</a>
+            </div>
+            <div class="right">
+                <a href="/signin/page" class="nav-links">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="wrapper hero-content">
+            <h1>Welcome to the Test</h1>
+            <p>We're going to be building a cool application using MVC framework! </p>
+            <a href="/register/page" class="start bold">Start</a>
+        </div>
+    </section>
+
+    <section id="cards" class="wrapper flex-between">
+        <div class="card">
+            <h3 class="orange">Manage Users</h3>
+            <p>Using this application, you'll be able to add, remove and edit users</p>
+        </div>
+        <div class="card">
+            <h3 class="orange">Leave Messages</h3>
+            <p>Users will be able to leave a message to another user using this application</p>
+        </div>
+        <div class="card">
+            <h3 class="orange">Edit User Information</h3>
+            <p>Admins, will be able to edit another user's information( email address, first name, last name etc.)</p>
+        </div>
+    </section>
+
+</body>
+</html>

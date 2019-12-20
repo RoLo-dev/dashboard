@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,700|Playfair+Display:900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-2">
+        <div class="wrapper flex-center">
+            <div class="left flex-around">
+                <h1 class="logo">Rolando's Dash</h1>
+                <a href="/dashboard" class="nav-links">Dashboard</a>
+                <a href="/" id="profile" class="nav-links">Profile</a>
+            </div>
+            <div class="right">
+                <a href="/logoff" class="nav-links">Log off</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper main-content">
+        <h3>All Users</h3>
+
+        <table>
+            <tr>
+                <th class="bold id">ID</th>
+                <th class="bold">Name ^</th>
+                <th class="bold">email</th>
+                <th class="bold">Created</th>
+                <th class="bold level">User level</th>
+            </tr>
+            {% for user in all_users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>
+                    <a href="/users/show/{{ user.id }}">
+                        {{ user.first_name }} {{ user.last_name }}
+                    </a>
+                </td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.created_at }}</td>
+                <td>{{ user_level }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</body>
+</html>
